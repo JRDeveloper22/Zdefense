@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 2d72cf14cc2fe9740b1853d40b9fb4ad
+timeCreated: 1520280340
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _windmap: {fileID: 2800000, guid: d181de7db06a96743bccbe9b9a25067d, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
