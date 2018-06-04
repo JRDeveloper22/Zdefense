@@ -20,7 +20,7 @@ public class AttackState : StateInterface<ZombieMachine>
     public override void Execute(ZombieMachine entity)
     {
         float dist = Vector3.Distance(entity.Player.transform.position, entity.transform.position);
-        entity.Zombie.Anim.SetBool("attack", true);
+        entity.Zombie.Anim.SetBool("Attack", true);
         if (dist > 5f)
         {
             entity.ChangeState(ChaseState.Instance);
@@ -29,6 +29,6 @@ public class AttackState : StateInterface<ZombieMachine>
     public override void Exit(ZombieMachine entity)
     {
         entity.ResumeMesh();
-        entity.Zombie.Anim.SetBool("attack", false);
+        entity.Zombie.Anim.SetBool("Attack", false);
     }
 }
