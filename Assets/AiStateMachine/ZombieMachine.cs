@@ -60,22 +60,26 @@ public class ZombieMachine : MonoBehaviour {
     }
     public void Movement()
     {
+        Zombie.Anim.SetFloat("Speed",agent.speed);
         if (Target != null)
         {
             agent.SetDestination(Target);
         }
         if (agent.remainingDistance > agent.stoppingDistance)
         {
+            /*
             if (agent.isOnOffMeshLink == true)
             {
                 Zombie.Anim.SetBool("jump", true);
             }
-            else Zombie.Anim.SetBool("jump", false);
+            else Zombie.Anim.SetBool("jump", false);*/
 
             Zombie.Move(agent.desiredVelocity, false);
         }
         else
-            Zombie.Move(Vector3.zero, false);
+        {
+            Zombie.Anim.SetFloat("Speed",0);
+        }
     }
     //NavmeshStartStop
     Vector3 LastAgentVelocity;
