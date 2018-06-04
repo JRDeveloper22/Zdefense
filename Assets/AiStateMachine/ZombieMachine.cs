@@ -67,13 +67,6 @@ public class ZombieMachine : MonoBehaviour {
         }
         if (agent.remainingDistance > agent.stoppingDistance)
         {
-            /*
-            if (agent.isOnOffMeshLink == true)
-            {
-                Zombie.Anim.SetBool("jump", true);
-            }
-            else Zombie.Anim.SetBool("jump", false);*/
-
             Zombie.Move(agent.desiredVelocity, false);
         }
         else
