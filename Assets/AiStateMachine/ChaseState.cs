@@ -31,6 +31,10 @@ public class ChaseState : StateInterface<ZombieMachine>
         {
             entity.ChangeState(SearchState.Instance);
         }
+        if (entity.isDead == true)
+        {
+            entity.ChangeState(DeathState.Instance);
+        }
 
     }
     public override void Exit(ZombieMachine entity)

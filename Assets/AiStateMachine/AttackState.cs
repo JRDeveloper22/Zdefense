@@ -25,6 +25,10 @@ public class AttackState : StateInterface<ZombieMachine>
         {
             entity.ChangeState(ChaseState.Instance);
         }
+        if(entity.isDead == true)
+        {
+            entity.ChangeState(DeathState.Instance);
+        }
     }
     public override void Exit(ZombieMachine entity)
     {

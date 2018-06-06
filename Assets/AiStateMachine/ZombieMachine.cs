@@ -7,6 +7,11 @@ public class ZombieMachine : MonoBehaviour {
     //navMesh//
     public UnityEngine.AI.NavMeshAgent agent { get; private set; }
     public HumaniodMovement Zombie { get; private set; }
+    //BodyParts
+    public GameObject[] BodyParts;
+    //deathVariables//
+    public bool isDead;
+    public float Health = 100;
     //SearchVariables//
     public bool isNear;
     float cooldown;
@@ -72,6 +77,14 @@ public class ZombieMachine : MonoBehaviour {
         else
         {
             Zombie.Anim.SetFloat("Speed",0);
+        }
+    }
+    public void HealthCheck(float Healthsub)
+    {
+        Health = Health = Healthsub;
+        if(Health >= 0)
+        {
+            isDead = true;
         }
     }
     //NavmeshStartStop

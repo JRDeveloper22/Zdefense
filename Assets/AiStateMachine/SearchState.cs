@@ -28,6 +28,10 @@ public class SearchState : StateInterface<ZombieMachine>
         {
             entity.ChangeState(FieldofViewState.Instance);
         }
+        if (entity.isDead == true)
+        {
+            entity.ChangeState(DeathState.Instance);
+        }
     }
     public override void Exit(ZombieMachine entity)
     {
