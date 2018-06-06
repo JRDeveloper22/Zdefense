@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: d2434e95a999d184a94e560f6900140d
-timeCreated: 1528229612
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -159,6 +157,7 @@ ModelImporter:
     9500000: //RootNode
     13700000: Soldier_body
     13700002: Soldier_head
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -181,6 +180,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
