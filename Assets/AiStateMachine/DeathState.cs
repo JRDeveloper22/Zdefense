@@ -33,7 +33,6 @@ public class DeathState : StateInterface<ZombieMachine>
             }
             entity.BodyParts[i].GetComponent<Rigidbody>().isKinematic = false;
             entity.BodyParts[i].GetComponent<Rigidbody>().useGravity = true;
-            Debug.Log("Deathenabled");
         }
     }
     public override void Execute(ZombieMachine entity)
