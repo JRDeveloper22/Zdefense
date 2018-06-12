@@ -44,7 +44,7 @@ public class UIManager : Singleton<UIManager> {
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
-        if(currentSceneName == "Day_Time_Scene")
+        if(currentSceneName == "MainMenu")
         {
             mainMenuPanel.gameObject.SetActive(true);
             loadingScreenPanel.gameObject.SetActive(false);
