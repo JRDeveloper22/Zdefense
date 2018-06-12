@@ -15,7 +15,7 @@ public class Gun : IActable
     public int maxBullets = 20;
 
     public PoolManager poolManager;
-    Animator GunAnim;
+    //Animator GunAnim;
     void Start()
     {
         bullets = maxBullets;
@@ -30,7 +30,7 @@ public class Gun : IActable
             PoolObject item = poolManager.GetItem(BulletPrefab);
             GameObject obj = item.gameObject;
             Bullet bullet = obj.GetComponent<Bullet>();
-            GunAnim.Play("Fire");
+            //GunAnim.Play("Fire");
 
             bullet.enabled = true;
             bullet.lastpos = BulletSpawnLocation.position;
