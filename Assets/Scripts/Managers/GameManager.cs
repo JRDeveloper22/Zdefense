@@ -24,7 +24,11 @@ public class GameManager : Singleton<GameManager>
 
     public void Play()
     {
-        StartCoroutine(LoadAsyncScene());
+        //StartCoroutine(LoadAsyncScene());
+        UIManager.Instance.levelPanel.gameObject.SetActive(true);
+        UIManager.Instance.loadingScreenPanel.gameObject.SetActive(false);
+        UIManager.Instance.mainMenuPanel.gameObject.SetActive(false);
+        UIManager.Instance.levelClearedPanel.gameObject.SetActive(false);
     }
 
     public void Quit()
