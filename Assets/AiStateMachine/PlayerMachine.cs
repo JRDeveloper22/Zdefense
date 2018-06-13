@@ -23,6 +23,7 @@ public class PlayerMachine : MonoBehaviour
     //
     public float mouseSpeed = 3f;
     public Transform PlayerRotate;
+    public Transform camera;
     // Use this for initialization
     void Awake()
     {
@@ -71,7 +72,13 @@ public class PlayerMachine : MonoBehaviour
     void MouseMovement()
     {
         float x = Input.GetAxis("Mouse X") * 3f;
+       // float y = Input.GetAxis("Mouse Y") * 3f;
         PlayerRotate.Rotate(0, x, 0);
+       
+       // camera.Rotate(y,0,0);
+       // y = Mathf.Clamp(camera.eulerAngles.x, -40, 40);
+        //Debug.Log(y);
+       // Debug.Log("Test");
     }
     void SwitchActive()
     {
