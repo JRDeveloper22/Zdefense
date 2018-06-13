@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public Vector3 lastpos;
     public Vector3 SavedSpawn;
     private new Rigidbody rigidbody;
-    private TrailRenderer trail;
+    //private TrailRenderer trail;
     private PoolObject poolObject = null;
 
     public float hitForce;
@@ -18,13 +18,13 @@ public class Bullet : MonoBehaviour
     [HideInInspector]
     public float Timer;
     //public GunShootExample GunShoot;
-    public TrailRenderer Trail
+    /*public TrailRenderer Trail
     {
         get
         {
             return trail;
         }
-    }
+    }*/
     public Rigidbody Rigidbody
     {
         get
@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
 
     void Awake()
     {
-        trail = gameObject.GetComponent<TrailRenderer>();
+        //trail = gameObject.GetComponent<TrailRenderer>();
         rigidbody = gameObject.GetComponent<Rigidbody>();
         currentpos = gameObject.GetComponent<Transform>().position;
         poolObject = GetComponent<PoolObject>();
@@ -62,11 +62,11 @@ public class Bullet : MonoBehaviour
             Debug.DrawLine(lastpos, hit.point);
             if (hit.transform.tag != "Bullet")
             {
-                if (hit.transform.tag == "Enemy")
+                if (hit.transform.tag == "Zombie")
                 {
                     Debug.Log("Damage");
-                   // Healt HP = hit.transform.GetComponent<Healt>();
-                    //HP.health(damage);
+                    ZombieMachine HP = hit.transform.GetComponent<ZombieMachine>();
+                    HP.HealthCheck(damage);
                 }
                 if (hit.rigidbody == true)
                 {
@@ -98,8 +98,8 @@ public class Bullet : MonoBehaviour
             rigidbody.isKinematic = true;
             rigidbody.velocity = Vector3.zero;
             rigidbody.angularVelocity = Vector3.zero;
-            trail.Clear();
-            trail.enabled = false;
+            //trail.Clear();
+            //trail.enabled = false;
             gameObject.SetActive(false);
             //this.enabled = false;
 

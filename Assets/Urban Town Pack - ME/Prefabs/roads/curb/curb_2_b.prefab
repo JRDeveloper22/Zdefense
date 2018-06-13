@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506749670970348}
   m_LocalRotation: {x: 0.0000018099951, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,6 +55,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: c9a9430b65d2dca41ab88b9f3c1caf4a, type: 2}
   - {fileID: 2100000, guid: bd840d05c23a04c46a980e9347655dd4, type: 2}
@@ -92,7 +93,7 @@ BoxCollider:
   m_GameObject: {fileID: 1506749670970348}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.23113358, y: 0.22243772, z: 2.0000007}
   m_Center: {x: -0.11556679, y: 0.11121524, z: -0.00000035762787}
