@@ -9,7 +9,9 @@ public class Player : MonoBehaviour {
 
     public GameObject ACW_R = null;
     public GameObject M4A1 = null;
-
+    public float mouseSpeed = 3f;
+    public Transform player;
+    public Camera cam;
 
 
 	void Start ()
@@ -41,7 +43,16 @@ public class Player : MonoBehaviour {
             SwitchActive();
             Debug.Log("I am Switching Guns");
         }
-
+        else if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("Im pressing LMB");
+            playerAnim.SetBool("Firing",true);
+        }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            Debug.Log("Im letting LMB go");
+            playerAnim.SetBool("Firing", false);
+        }
         MouseMovement();
 	}
 
@@ -60,15 +71,13 @@ public class Player : MonoBehaviour {
     }
     void MouseMovement()
     {
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+        
+        float X = Input.GetAxis("Mouse X") * mouseSpeed;
+        //float Y = Input.GetAxis("Mouse Y") * mouseSpeed;
 
-        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-        transform.rotation = Quaternion.Euler(new Vector3(0f, -angle, 0f));
-    }
+        player.Rotate(0,X,0);// Makeshift Rotate player Char
 
-    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
-    {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+
     }
+  
 }
