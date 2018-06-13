@@ -51,6 +51,13 @@ public class UIManager : Singleton<UIManager> {
             levelPanel.gameObject.SetActive(false);
             levelClearedPanel.gameObject.SetActive(false);
         }
+        else if(currentSceneName == "AI test")
+        {
+            mainMenuPanel.gameObject.SetActive(true);
+            loadingScreenPanel.gameObject.SetActive(false);
+            levelPanel.gameObject.SetActive(false);
+            levelClearedPanel.gameObject.SetActive(false);
+        }
         else
         {
             levelPanel.gameObject.SetActive(true);
