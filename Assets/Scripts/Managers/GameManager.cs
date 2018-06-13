@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
+
+    public PlayerMachine player;
+    public Camera mainCam;
     IEnumerator LoadAsyncScene()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(1);
@@ -24,7 +27,13 @@ public class GameManager : Singleton<GameManager>
 
     public void Play()
     {
-        StartCoroutine(LoadAsyncScene());
+        player.camera.GetComponent<Camera>().enabled = true;
+        mainCam.gameObject.SetActive(false);
+        UIManager.Instance.levelPanel.gameObject.SetActive(true);
+        UIManager.Instance.loadingScreenPanel.gameObject.SetActive(false);
+        UIManager.Instance.mainMenuPanel.gameObject.SetActive(false);
+        UIManager.Instance.levelClearedPanel.gameObject.SetActive(false);
+        //StartCoroutine(LoadAsyncScene());
     }
 
     public void Quit()

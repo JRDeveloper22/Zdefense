@@ -35,8 +35,14 @@ public class PlayerMachine : MonoBehaviour
         playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         poolManager = FindObjectOfType<PoolManager>();
     }
+
+    private void Start()
+    {
+        camera.gameObject.GetComponent<Camera>().enabled = false;
+    }
     void Update()
     {
+        UIManager.Instance.UpdateHealth(phealth);
         Vector3 foward = transform.forward * Time.deltaTime * speed;
         timer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.W))
